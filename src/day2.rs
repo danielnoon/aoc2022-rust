@@ -1,13 +1,13 @@
-use std::fs;
+use crate::utils::read_file;
 
 pub fn run() {
     let path = "input/02.in";
 
-    let contents = fs::read_to_string(path).expect("Bruh");
+    let contents = read_file(path);
 
     let mut sum = 0;
 
-    for line in contents.split("\r\n") {
+    for line in contents.split("\n") {
         if let [opponent, me] = line.split(" ").collect::<Vec<&str>>()[..2] {
             let shape_score = match me {
                 "X" => 1,
