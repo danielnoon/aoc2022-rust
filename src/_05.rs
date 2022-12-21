@@ -1,5 +1,3 @@
-use std::fs;
-
 use crate::utils::read_file;
 
 #[derive(Debug)]
@@ -85,7 +83,7 @@ impl Ship {
 }
 
 pub fn run() {
-    let input = read_file("input/05.txt");
+    let input = read_file("input/05.in");
 
     if let [blueprint, instructions] = input.split("\n\n").collect::<Vec<_>>()[..] {
         let mut ship = Ship::new(9);

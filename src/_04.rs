@@ -13,17 +13,14 @@ pub fn run() {
         .split("\n")
         .map(|line| {
             let elves = line.split(",").collect::<Vec<&str>>();
-            // now elves is ["n-m", "x-y"]
             return elves
                 .iter()
                 .map(|elf| {
                     let range = elf.split("-").collect::<Vec<&str>>();
-                    // now range is ["n", "m"]
                     let range = range
                         .iter()
                         .map(|num| num.parse::<i32>().unwrap())
                         .collect::<Vec<i32>>();
-                    // now range is [n, m]
                     return Elf {
                         min: range[0],
                         max: range[1],
